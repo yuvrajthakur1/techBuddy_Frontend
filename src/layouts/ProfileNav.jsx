@@ -5,10 +5,12 @@ import { NavLink} from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import api from '../axios/axios'
+import { useNavigate } from 'react-router-dom';
 
 const ProfileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const {user} = useLoaderData();
+  const navigate = useNavigate();
   const location = useLocation();
   // const { user, logout } = useAuth(); // You would get user and logout function from context
 
@@ -20,9 +22,9 @@ const ProfileNavbar = () => {
 
   const handleLogout = async()=>{
    try {
-    const res = await api.post("/auth/logout");
-    console.log(res);
-    return res;
+    await api.post("/auth/logout");
+    navigate("/login");
+
    } catch (error) {
        console.log("Logout Error",error);
    }
