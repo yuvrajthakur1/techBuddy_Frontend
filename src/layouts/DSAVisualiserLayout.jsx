@@ -10,6 +10,7 @@ import VisualiserSidebarItem from "../components/VisualiserSideBar";
 
 export default function DSAVisualiserLayout(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileSideOpen, setIsMobileSideOpen] = useState(false);
   const {user} = useLoaderData();
   // const { user, logout } = useAuth(); // You would get user and logout function from context
 
@@ -217,9 +218,13 @@ export default function DSAVisualiserLayout(){
             </nav>
                   
 
-            <div className="bg-pink-800 flex-1 flex overflow-hidden">
-
-              <aside className="w-64 pr-3 lg:flex overflow-y-auto hidden flex-col start pt-3 pb-2  bg-gray-900">
+            <div className=" flex-1 flex relative
+            overflow-hidden">
+               <button className="absolute left-4 top-2 z-50" onClick={()=> setIsMobileSideOpen(!isMobileSideOpen)}>
+                <MenuIcon/>
+               </button>
+             { 
+                <aside className={` overflow-hidden z-40 fixed left-0 h-screen transition-all duration-300 ease-in-out ${isMobileSideOpen ? 'w-64':'w-0'}   transform  pr-3 lg:flex overflow-y-auto  flex-col start pt-3 pb-2  ${isMobileSideOpen?'bg-gray-900':'bg-gray-950'} `}>
 
 
                     <div className="flex flex-col justify-start pl-4  py-7">
@@ -238,6 +243,9 @@ export default function DSAVisualiserLayout(){
                      </div>
           
               </aside>
+             }
+
+
 
               <div className="flex-1 overflow-y-auto  bg-gray-950">
 
