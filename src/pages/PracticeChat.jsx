@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import api from '../axios/axios'
 import SidebarItem from '../components/SideBarComponent';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
+import { MenuIcon } from 'lucide-react';
 
 
 
@@ -11,10 +12,10 @@ const PracticeChat = () => {
   const [userAnswer, setUserAnswer] = useState('');
   const [loading, setLoading] = useState(false);
   const chatEndRef = useRef(null);
+  const [isSideBarOpen,setSideBarOpen] = useState(false);
 
   //Jese Hi user select karega QuestionFetchLoader call hoga data nikal ayega
   const randomQuestion = useLoaderData();
-
   const  {isMobileMenuOpen} = useOutletContext();
  
 
@@ -98,9 +99,10 @@ const PracticeChat = () => {
           align-self: flex-start;
         }
       `}</style>
-
+      
+    <MenuIcon/> 
+     {isSideBarOpen &&
       <aside className='w-60 hidden p-2 md:flex md:flex-col gap-3 bg-gray-900 py-10 overflow-y-scroll'>
-
               <div className='flex flex-col'>
                  <SidebarItem title="DSA" options={["Array","Stack","Sorting","LinkedList","Queue","String","DSAQuestion"]} />
                  <SidebarItem title="Java" options={["Core","Advance","Java Collections"]}/>
@@ -108,7 +110,7 @@ const PracticeChat = () => {
                  <SidebarItem title="HR"/>
               </div>
       </aside> 
-
+     }
 
       <div className="flex flex-col justify-center p-10 items-center gap-3  overflow-y-auto flex-1  ">
 

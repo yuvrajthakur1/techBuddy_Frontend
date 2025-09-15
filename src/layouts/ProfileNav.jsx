@@ -160,6 +160,7 @@ const ProfileNavbar = () => {
                             </button>
                             
                </div>
+
                <div className={`lg:hidden text-white ${isMobileMenuOpen?'hidden':'block'} `}>
                 <button onClick={toggleMobileMenu}>
                   <MenuIcon/>
@@ -210,11 +211,7 @@ const ProfileNavbar = () => {
                </div>
                )
                
-               }
-                  
-               
-
-             
+               }  
             </nav>
 
       <main className='flex-1 overflow-auto'>

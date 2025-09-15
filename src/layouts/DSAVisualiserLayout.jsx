@@ -12,9 +12,8 @@ export default function DSAVisualiserLayout(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSideOpen, setIsMobileSideOpen] = useState(false);
   const {user} = useLoaderData();
-  // const { user, logout } = useAuth(); // You would get user and logout function from context
 
-  // Dummy user data for demonstration
+ 
   const location = useLocation();
   
   const toggleMobileMenu = () => {
