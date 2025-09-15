@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet, useNavigation } from 'react-router-dom';
-import {ClimbingBoxLoader,hash} from 'react-spinners';
+import {ClimbingBoxLoader,hash, RingLoader} from 'react-spinners';
 
 
 

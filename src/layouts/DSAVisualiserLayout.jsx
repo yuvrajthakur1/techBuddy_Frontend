@@ -6,7 +6,7 @@ import { MenuIcon, XIcon} from "lucide-react";
 import { useLocation } from "react-router-dom";
 import api from "../axios/axios";
 import VisualiserSidebarItem from "../components/VisualiserSideBar";
-import { ClimbingBoxLoader } from "react-spinners";
+import { ClimbingBoxLoader, RingLoader } from "react-spinners";
 
 
 export default function DSAVisualiserLayout(){

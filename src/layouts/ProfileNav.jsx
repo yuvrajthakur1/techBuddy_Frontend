@@ -6,7 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import api from '../axios/axios'
 import { useNavigate } from 'react-router-dom';
-import { ClimbingBoxLoader } from 'react-spinners';
+import { ClimbingBoxLoader, RingLoader } from 'react-spinners';
 
 const ProfileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
