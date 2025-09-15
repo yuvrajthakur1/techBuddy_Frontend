@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx'
 import SignUp from './pages/SignUp.jsx'
 import Login from './pages/Login.jsx'
 import signupAction from './actions/signupAction.js'
-import loginAction from './actions/LoginAction.js'
+import loginAction from './actions/loginAction.js'
 import ProfilePage from './pages/profilePage.jsx'
 import profileLoader from './loader/profileLoader.js'
 import PracticeChat from './pages/PracticeChat.jsx'
@@ -27,6 +27,11 @@ import DoublyCircularLinkedListVisualizer from './pages/DSAVisulaizerPages/Linke
 import CircularQueueVisualizer from './pages/DSAVisulaizerPages/Queue/CircularQueue.jsx'
 import PriorityQueueVisualizer from './pages/DSAVisulaizerPages/Queue/PriorityQueue.jsx'
 import DequeVisualizer from './pages/DSAVisulaizerPages/Queue/Deque.jsx'
+import Forgot from './pages/Forgot.jsx'
+import Reset from './pages/Reset.jsx'
+import forgotAction from './actions/forgot.Action.js'
+import resetAction from './actions/resetAction.js'
+
 
 const router = createBrowserRouter([
 
@@ -45,6 +50,7 @@ const router = createBrowserRouter([
         }
       ]
     },
+
     {
       path:"/signup",
       element:<SignUp/>,
@@ -54,6 +60,16 @@ const router = createBrowserRouter([
       path:"/login",
       element:<Login/>,
       action:loginAction
+    },
+    {
+      path:"/forgot-password",
+      element:<Forgot/>,
+      action:forgotAction
+    },
+    {
+      path:"/reset-password/:token",
+      element:<Reset/>,
+      action:resetAction
     },
 
 

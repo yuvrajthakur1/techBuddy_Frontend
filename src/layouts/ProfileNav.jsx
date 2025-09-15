@@ -153,7 +153,7 @@ const ProfileNavbar = () => {
 
                             <button
                               onClick={handleLogout}
-                              className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
+                              className=" cursor-pointer text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
                               
                             >
                               LogOut
@@ -191,14 +191,15 @@ const ProfileNavbar = () => {
                               <NavLink
                                 to="/dsavisualiser"
                                 className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                                
+                                        
                               >
                                 DSA Visualise
                               </NavLink>
 
                               <button
                               onClick={handleLogout}
-                              className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
+                            
+                              className="cursor-pointer  text-sm  font-bold glass-card py-2 w-40 rounded-md text-center"
                               
                             >
                               LogOut

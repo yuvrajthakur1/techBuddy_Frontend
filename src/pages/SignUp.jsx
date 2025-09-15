@@ -8,8 +8,12 @@ const SignUp = () => {
   if(actionData?.failure) return <h1>{actionData.failure}</h1>
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans flex items-center justify-center p-4">
-      <div className="max-w-md w-full bg-gray-800 bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-700 p-8 rounded-2xl shadow-xl animate-scaleIn">
+    <div className="min-h-screen bg-gray-900  text-gray-100 font-sans flex items-center justify-center p-4">
+      <div className="max-w-md w-full bg-gray-800 relative bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-700 p-8 rounded-2xl shadow-xl animate-scaleIn">
+        
+                 <div className="flex items-center left-3 top-5 absolute justify-center w-40 h-12 space-x-2">
+            <img src="/Logo1.png" alt="Brand Logo" />
+          </div>
         <h2 className="text-3xl font-bold text-center text-white mb-6 bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Sign Up</h2>
         <Form  method='post' className="space-y-3">
           <div>

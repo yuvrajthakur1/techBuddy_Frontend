@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import { Form, NavLink, useActionData } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { Form, NavLink} from 'react-router-dom';
 
 const Login = () => {
   const formRef = useRef(null);  
@@ -29,6 +30,30 @@ const Login = () => {
         }
       `}</style>
       <div className="min-h-screen bg-gray-900 text-gray-100 font-sans flex items-center justify-center p-4">
+          <Toaster
+             position="top-center"
+             reverseOrder={false}
+             gutter={8}
+             toastOptions={{
+               // Define default options
+               className: '',
+               duration: 50000,
+               style: {
+                 background: '#ffffff',
+                 color: '#363636',
+               },
+               // Default options for specific types
+               success: {
+                 duration: 3000,
+                 theme: {
+                   primary: 'green',
+                   secondary: 'black',
+                 },
+               },
+             }}
+           />
+
+           
         <div className="max-w-md w-full bg-gray-800 bg-opacity-30 backdrop-filter backdrop-blur-lg border border-gray-700 p-8 rounded-2xl shadow-xl animate-fadeInSlideUp">
          <div className="flex items-center justify-center w-40 h-12 space-x-2">
             <img src="/Logo1.png" alt="Brand Logo" />
@@ -59,7 +84,12 @@ const Login = () => {
             >
               Log In
             </button>
+
+             <NavLink to="/forgot-password" className="text-gray-200">
+               Forgot Password ?
+            </NavLink>
           </Form>
+          
           <div className="mt-4 text-center">
             <NavLink to='/signup' className="text-blue-400 hover:text-blue-300 transition-colors">
               Don't have an account? Sign Up
