@@ -6,6 +6,7 @@ import { MenuIcon, XIcon} from "lucide-react";
 import { useLocation } from "react-router-dom";
 import api from "../axios/axios";
 import VisualiserSidebarItem from "../components/VisualiserSideBar";
+import { ClimbingBoxLoader } from "react-spinners";
 
 
 export default function DSAVisualiserLayout(){
@@ -39,9 +40,11 @@ export default function DSAVisualiserLayout(){
   if (navigation.state === "loading") {
     // pure page ka loader
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600"></div>
-      </div>
+       <ClimbingBoxLoader
+  color="#6cc1dc"
+  loading
+  size={20}
+/>
     );
   }
 

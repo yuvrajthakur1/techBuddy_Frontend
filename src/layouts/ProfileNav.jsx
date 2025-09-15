@@ -6,6 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import api from '../axios/axios'
 import { useNavigate } from 'react-router-dom';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 const ProfileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,9 +41,11 @@ const ProfileNavbar = () => {
   if (navigation.state === "loading") {
     // pure page ka loader
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600"></div>
-      </div>
+      <ClimbingBoxLoader
+  color="#6cc1dc"
+  loading
+  size={20}
+/>
     );
   }
 
