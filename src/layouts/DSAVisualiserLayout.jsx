@@ -217,9 +217,9 @@ export default function DSAVisualiserLayout(){
             </nav>
                   
 
-            <div className=" flex-1 flex relative
+            <div className=" flex-1 flex 
             overflow-hidden">
-               <button className="absolute left-4 top-2 z-50" onClick={()=> setIsMobileSideOpen(!isMobileSideOpen)}>
+               <button className="absolute left-24 top-2 z-50" onClick={()=> setIsMobileSideOpen(!isMobileSideOpen)}>
                 <MenuIcon/>
                </button>
              { 

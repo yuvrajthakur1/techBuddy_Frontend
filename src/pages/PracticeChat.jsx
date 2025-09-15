@@ -100,7 +100,7 @@ const PracticeChat = () => {
         }
       `}</style>
       
-     <button className="absolute left-4 top-2 z-50" onClick={()=> setSideBarOpen(!isSideBarOpen)}>
+     <button className="absolute left-4 top-24 z-50" onClick={()=> setSideBarOpen(!isSideBarOpen)}>
                 <MenuIcon className='text-white'/>
       </button>
        
