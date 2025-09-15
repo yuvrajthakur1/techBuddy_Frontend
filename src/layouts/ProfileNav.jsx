@@ -1,6 +1,6 @@
 import { MenuIcon, XIcon } from 'lucide-react';
 import React, { useEffect, useState} from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigation } from 'react-router-dom';
 import { NavLink} from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
@@ -33,6 +33,19 @@ const ProfileNavbar = () => {
  useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
+
+
+  const navigation = useNavigation();
+
+  if (navigation.state === "loading") {
+    // pure page ka loader
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
 
   return (
     <div className='flex  flex-col h-screen  bg-gray-900'>
