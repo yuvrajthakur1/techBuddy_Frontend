@@ -40,9 +40,7 @@ const ProfilePage = () => {
   const  {isMobileMenuOpen}  = useOutletContext();
  
 
-  useEffect(()=>{
-    notifySuccess("Welcome " + user.name)
-  },[])
+
   
   return (
     <div className=" h-screen bg-gray-900  text-gray-100  p-6">
