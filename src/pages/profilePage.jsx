@@ -91,7 +91,7 @@ const ProfilePage = () => {
               {user.name.charAt(0)}
             </div>
             <div className="text-left">
-              <h1 className="text-3xl font-extrabold text-white">{user.name}</h1>
+              <h1 className="lg:text-3xl md:text-2xl text-xl font-extrabold text-white">{user.name}</h1>
               <p className="text-blue-400 text-lg">{user.occupation}</p>
               <p className="text-sm text-gray-400">{user.college}, {user.city}</p>
             </div>
