@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { MenuIcon, XIcon} from "lucide-react";
@@ -12,7 +12,7 @@ export default function DSAVisualiserLayout(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileSideOpen, setIsMobileSideOpen] = useState(false);
   const {user} = useLoaderData();
-
+  const navigate = useNavigate();
  
   const location = useLocation();
   
@@ -23,8 +23,7 @@ export default function DSAVisualiserLayout(){
    const handleLogout = async()=>{
      try {
       const res = await api.post("/auth/logout");
-      console.log(res);
-      return res;
+      navigate("/login");
      } catch (error) {
          console.log("Logout Error",error);
      }
@@ -154,7 +153,7 @@ export default function DSAVisualiserLayout(){
 
                              <button
                               onClick={handleLogout}
-                              className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
+                              className="text-sm font-bold cursor-pointer glass-card py-2 w-40 rounded-md text-center"
                               
                             >
                               LogOut
@@ -200,7 +199,7 @@ export default function DSAVisualiserLayout(){
                               
                              <button
                               onClick={handleLogout}
-                              className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
+                              className="text-sm font-bold cursor-pointer glass-card py-2 w-40 rounded-md text-center"
                               
                             >
                               LogOut

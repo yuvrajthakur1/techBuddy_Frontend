@@ -24,7 +24,6 @@ const ProfileNavbar = () => {
    try {
     await api.post("/auth/logout");
     navigate("/login");
-
    } catch (error) {
        console.log("Logout Error",error);
    }
