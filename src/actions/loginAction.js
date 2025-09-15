@@ -1,7 +1,7 @@
 import { redirect } from "react-router-dom";
 import api from "../axios/axios";
 import { Toaster } from "react-hot-toast";
-import { notifySuccess,notifyError } from "../TOast/toast";
+import { notifySuccess,notifyError } from "../toast/toast";
 export default async function loginAction({request}) {
      const formData = await request.formData();
      const plainData = Object.fromEntries(formData);
