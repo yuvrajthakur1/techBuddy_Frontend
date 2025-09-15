@@ -41,11 +41,13 @@ const ProfileNavbar = () => {
   if (navigation.state === "loading") {
     // pure page ka loader
     return (
-      <ClimbingBoxLoader
+      <div className="flex w-screen h-screen justify-center items-center bg-gray-950">
+        <ClimbingBoxLoader
   color="#6cc1dc"
   loading
   size={20}
 />
+      </div>
     );
   }
 
