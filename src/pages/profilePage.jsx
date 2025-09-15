@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import  {useLoaderData} from 'react-router-dom'
 import { useOutletContext } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import {notifySuccess } from "../toast/toast"
+
 // This is the data we would get from the backend API.
 // It reflects the structure of your Attempt model.
 
