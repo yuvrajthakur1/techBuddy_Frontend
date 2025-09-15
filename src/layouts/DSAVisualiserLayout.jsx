@@ -161,6 +161,7 @@ export default function DSAVisualiserLayout(){
                             </button>
                             
                </div>
+               
                <div className={`lg:hidden  ${isMobileMenuOpen?'hidden':'block'} `}>
                 <button onClick={toggleMobileMenu}>
                   <MenuIcon/>
@@ -219,7 +220,7 @@ export default function DSAVisualiserLayout(){
 
             <div className=" flex-1 flex 
             overflow-hidden">
-               <button className="absolute left-24 top-2 z-50" onClick={()=> setIsMobileSideOpen(!isMobileSideOpen)}>
+               <button className="absolute left-2 top-24 z-50" onClick={()=> setIsMobileSideOpen(!isMobileSideOpen)}>
                 <MenuIcon/>
                </button>
              { 
