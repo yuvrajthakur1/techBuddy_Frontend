@@ -100,12 +100,12 @@ const PracticeChat = () => {
         }
       `}</style>
       
-     <button className="absolute left-4 top-24 z-50" onClick={()=> setSideBarOpen(!isSideBarOpen)}>
+     <button className="absolute left-4 top-24 mb-2 z-50" onClick={()=> setSideBarOpen(!isSideBarOpen)}>
                 <MenuIcon className='text-white'/>
       </button>
        
      {isSideBarOpen &&
-      <aside className='w-full p-2 flex md:flex-col gap-3 overflow-hidden z-40 fixed left-0 h-screen transition-all duration-300 ease-in-out bg-gray-900 py-10 overflow-y-scroll'>
+      <aside className={` overflow-hidden z-40 fixed left-0 h-screen transition-all duration-300 ease-in-out ${isSideBarOpen ? 'w-64':'w-0'}   transform  pr-3 lg:flex overflow-y-auto  flex-col start pt-3 pb-2  ${isSideBarOpen?'bg-gray-900':'bg-gray-950'} `}>
               <div className='flex flex-col'>
                  <SidebarItem title="DSA" options={["Array","Stack","Sorting","LinkedList","Queue","String","DSAQuestion"]} />
                  <SidebarItem title="Java" options={["Core","Advance","Java Collections"]}/>
