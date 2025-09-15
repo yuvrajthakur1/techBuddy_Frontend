@@ -1,7 +1,8 @@
 import axios from "axios"
 
+
 export const api = axios.create({
-  baseURL:"http://localhost:4000/api",
+  baseURL:"https://techbuddy-backend-a95s.onrender.com/api",
   withCredentials:true,
 })
 
