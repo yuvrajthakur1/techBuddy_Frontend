@@ -100,7 +100,10 @@ const PracticeChat = () => {
         }
       `}</style>
       
-    <MenuIcon/> 
+     <button className="absolute left-4 top-2 z-50" onClick={()=> setSideBarOpen(!isSideBarOpen)}>
+                <MenuIcon className='text-white'/>
+      </button>
+      
      {isSideBarOpen &&
       <aside className='w-60 hidden p-2 md:flex md:flex-col gap-3 bg-gray-900 py-10 overflow-y-scroll'>
               <div className='flex flex-col'>
