@@ -83,7 +83,7 @@ const PracticeChat = () => {
   ////////////////////////
   
   return (
-    <div className="flex h-full bg-gray-900">
+    <div className="flex relative h-full bg-gray-900">
       <style>{`
         .glass-card {
           background-color: rgba(31, 41, 55, 0.3);
@@ -103,7 +103,7 @@ const PracticeChat = () => {
      <button className="absolute left-4 top-2 z-50" onClick={()=> setSideBarOpen(!isSideBarOpen)}>
                 <MenuIcon className='text-white'/>
       </button>
-      
+       
      {isSideBarOpen &&
       <aside className='w-60 hidden p-2 md:flex md:flex-col gap-3 bg-gray-900 py-10 overflow-y-scroll'>
               <div className='flex flex-col'>
