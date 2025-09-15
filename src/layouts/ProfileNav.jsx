@@ -42,10 +42,9 @@ const ProfileNavbar = () => {
     // pure page ka loader
     return (
       <div className="flex w-screen h-screen justify-center items-center bg-gray-950">
-        <ClimbingBoxLoader
-  color="#6cc1dc"
+     <RingLoader
+  color="#33d8dd"
   loading
-  size={20}
 />
       </div>
     );
