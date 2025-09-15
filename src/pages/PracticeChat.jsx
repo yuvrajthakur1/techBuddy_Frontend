@@ -105,7 +105,7 @@ const PracticeChat = () => {
       </button>
        
      {isSideBarOpen &&
-      <aside className='w-60  p-2 flex md:flex-col gap-3 overflow-hidden z-40 fixed left-0 h-screen transition-all duration-300 ease-in-out bg-gray-900 py-10 overflow-y-scroll'>
+      <aside className='w-full p-2 flex md:flex-col gap-3 overflow-hidden z-40 fixed left-0 h-screen transition-all duration-300 ease-in-out bg-gray-900 py-10 overflow-y-scroll'>
               <div className='flex flex-col'>
                  <SidebarItem title="DSA" options={["Array","Stack","Sorting","LinkedList","Queue","String","DSAQuestion"]} />
                  <SidebarItem title="Java" options={["Core","Advance","Java Collections"]}/>
