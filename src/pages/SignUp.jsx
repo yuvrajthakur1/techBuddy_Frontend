@@ -1,11 +1,10 @@
 import React from 'react';
-import { Form, NavLink , useActionData} from 'react-router-dom';
+import { Form, NavLink} from 'react-router-dom';
 
 const SignUp = () => {
   
-  const actionData = useActionData();
 
-  if(actionData?.failure) return <h1>{actionData.failure}</h1>
+
 
   return (
     <div className="min-h-screen bg-gray-900  text-gray-100 font-sans flex items-center justify-center p-4">
@@ -14,7 +13,7 @@ const SignUp = () => {
                  <div className="flex items-center left-3 top-5 absolute justify-center w-40 h-12 space-x-2">
             <img src="/Logo1.png" alt="Brand Logo" />
           </div>
-        <h2 className="text-3xl font-bold text-center text-white mb-6 bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Sign Up</h2>
+        <h2 className="sm:text-3xl text-2xl font-bold text-center text-white mb-6 bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Sign Up</h2>
         <Form  method='post' className="space-y-3">
           <div>
             <input
