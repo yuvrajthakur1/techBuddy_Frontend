@@ -83,7 +83,7 @@ const PracticeChat = () => {
   ////////////////////////
   
   return (
-    <div className="flex relative h-full bg-gray-900">
+    <div className="flex  h-full bg-gray-900">
       <style>{`
         .glass-card {
           background-color: rgba(31, 41, 55, 0.3);
