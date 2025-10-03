@@ -1,5 +1,6 @@
-import { MenuIcon, XIcon } from 'lucide-react';
+import { MenuIcon, XIcon,LogOut } from 'lucide-react';
 import React, { useEffect, useState} from 'react';
+
 import { useLocation, useNavigation } from 'react-router-dom';
 import { NavLink} from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
@@ -7,6 +8,23 @@ import { Outlet } from 'react-router-dom';
 import api from '../axios/axios'
 import { useNavigate } from 'react-router-dom';
 import { ClimbingBoxLoader, RingLoader } from 'react-spinners';
+
+
+
+const NavItem = ({path,field})=>{
+     return  <NavLink
+                              to={path}
+                             className="text-sm font-semibold text-slate-200  py-2  rounded-md text-center
+                               relative pb-1 hover:text-sky-300
+                after:content-[''] after:absolute after:left-0 after:bottom-0
+                after:h-[2px] after:w-0 after:bg-current
+                after:transition-all after:duration-300
+                hover:after:w-full   
+                             "
+                            >
+                              {field}
+                            </NavLink>
+}
 
 const ProfileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,6 +68,7 @@ const ProfileNavbar = () => {
     );
   }
 
+  
 
   return (
     <div className='flex  flex-col h-screen  bg-gray-900'>
@@ -134,7 +153,7 @@ const ProfileNavbar = () => {
         }
       `}</style>
 
-     <nav className="h-20 py-2 pl-10 text-white pr-10 justify-between items-center glass-card bg-gray-950 flex">
+     <nav className="h-20 py-2 pl-6 text-white pr-6 justify-between items-center glass-card bg-gray-950 flex">
               
               <div>
                 {/* Brand/Logo */}
@@ -144,35 +163,23 @@ const ProfileNavbar = () => {
 
               </div>
                
-               <div className="lg:flex hidden gap-4">
-                 <NavLink
-                              to="/profile/practice"
-                             className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                            >
-                              Practice With AI
-                            </NavLink>
-                
-                            <NavLink
-                              to="/profile"
-                             className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                            >
-                              Analytics
-                            </NavLink>
-                
-                            <NavLink
-                              to="/dsavisualiser"
-                              className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                              
-                            >
-                              DSA Visualise
-                            </NavLink>
+               <div className="lg:flex hidden gap-8">
+                   
+                         <div className='flex gap-6' >                         
+                            <NavItem path="/profile/practice" field="Practice"/>
+                            <NavItem path="/profile" field="Analytics"/>
+                            <NavItem path="/dsavisualiser" field="Visualise DSA"/>
+                           {
+                            user.role.toLowerCase() === "admin" && <NavItem path="/admin" field="Admin Panel"/>
+                           }
+                         </div>
 
                             <button
                               onClick={handleLogout}
-                              className=" cursor-pointer text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
+                              className=" cursor-pointer text-sm flex justify-center items-center mt-1 font-semibold text-slate-200     rounded-md text-center"
                               
                             >
-                              LogOut
+                              <LogOut/>
                             </button>
                             
                </div>
@@ -184,42 +191,25 @@ const ProfileNavbar = () => {
                </div>
                
                {isMobileMenuOpen && (
-                 <div className="lg:hidden  p-4 items-center fixed z-50 top-0 right-0 w-full   bg-gray-950 flex flex-col gap-4">
+                 <div className="lg:hidden  p-4 items-center fixed z-50 top-0 right-0 w-full   bg-gray-900 border-b-[1px] flex flex-col gap-4">
                   <div>
                    <button onClick={toggleMobileMenu}>
                      <XIcon/>
                    </button>
                   </div>
-                  <div className="flex flex-col pb-12 gap-2">
-                   <NavLink
-                                to="/profile/practice"
-                               className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                              >
-                                Practice With AI
-                              </NavLink>
-                  
-                              <NavLink
-                                to="/profile"
-                               className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                              >
-                                Analytics
-                              </NavLink>
-                  
-                              <NavLink
-                                to="/dsavisualiser"
-                                className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                                        
-                              >
-                                DSA Visualise
-                              </NavLink>
+                  <div className="flex flex-col pb-1 gap-2">
+                            <NavItem path="/profile/practice" field="Practice"/>
+                            <NavItem path="/profile" field="Analytics"/>
+                            <NavItem path="/dsavisualiser" field="Visualise DSA"/>
+                           {
+                            user.role.toLowerCase() === "admin" && <NavItem path="/admin" field="Admin Panel"/>
+                           }
 
                               <button
                               onClick={handleLogout}
-                            
-                              className="cursor-pointer  text-sm  font-bold glass-card py-2 w-40 rounded-md text-center"
-                              
+                              className="cursor-pointer  text-sm flex justify-center items-center  font-bold text-slate-200 py-2  rounded-md text-center" 
                             >
-                              LogOut
+                              <LogOut/>
                             </button>
                             
                               

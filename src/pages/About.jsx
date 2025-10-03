@@ -137,10 +137,11 @@ const AboutPage = () => {
             Ace your interviews with AI-powered tools designed to help you prepare effectively.
           </p>
         </div>
+        
 
         {/* Section 1: Chatbot */}
-        <div className="glass-card p-6 min-h-[50vh] flex flex-col  justify-around items-center rounded-2xl shadow-xl animate-fadeInSlideUp transition-all ease-in duration-500 hover:scale-105" style={{ animationDelay: '0.2s' }}>
-          <h4 className="md:text-4xl text-3xl font-bold text-justify   mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">1. AI Chatbot Interviewer </h4>
+        <div className="glass-card p-2 min-h-[50vh] flex flex-col  justify-around items-center rounded-2xl shadow-xl animate-fadeInSlideUp transition-all ease-in duration-500 hover:scale-105" style={{ animationDelay: '0.2s' }}>
+          <h4 className="md:text-4xl sm:text-3xl text-xl pt-6 font-bold text-justify  mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">1. AI Chatbot Interviewer </h4>
           <div className='flex flex-col text-3xl justify-center items-center'>
             <MessageCircleCode className='w-10 h-10'/>
           </div>
@@ -150,8 +151,8 @@ const AboutPage = () => {
         </div>
 
         {/* Section 2: Dashboard */}
-        <div className="glass-card p-6 transition-all ease-in duration-500 hover:scale-105 min-h-[50vh] flex flex-col justify-center items-center rounded-2xl shadow-xl animate-fadeInSlideUp " style={{ animationDelay: '0.4s' }}>
-          <h4 className="md:text-4xl text-3xl font-bold text-justify   mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">2. Interactive Dashboard</h4>
+        <div className="glass-card p-2 transition-all ease-in duration-500 hover:scale-105 min-h-[50vh] flex flex-col justify-center items-center rounded-2xl shadow-xl animate-fadeInSlideUp " style={{ animationDelay: '0.4s' }}>
+          <h4 className="md:text-4xl sm:text-3xl text-xl pt-6 font-bold text-justify   mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">2. Interactive Dashboard</h4>
 
           <div className='flex flex-col text-3xl justify-center items-center'>
             <LayoutDashboard  className='w-10 h-10'/>
@@ -163,8 +164,8 @@ const AboutPage = () => {
         </div>
 
         {/* Section 3: Question Bank */}
-        <div className="glass-card transition-all ease-in duration-500 hover:scale-105 p-6 min-h-[50vh] flex flex-col justify-center items-center rounded-2xl shadow-xl animate-fadeInSlideUp" style={{ animationDelay: '0.6s' }}>
-          <h4 className="md:text-4xl text-3xl font-bold text-justify    mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">3. Comprehensive Question Bank</h4>
+        <div className="glass-card transition-all ease-in duration-500 hover:scale-105 p-2 min-h-[50vh] flex flex-col justify-center items-center rounded-2xl shadow-xl animate-fadeInSlideUp" style={{ animationDelay: '0.6s' }}>
+          <h4 className="md:text-4xl sm:text-3xl text-xl pt-6 font-bold text-justify    mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">3. Comprehensive Question Bank</h4>
 
           <div className='flex flex-col text-3xl justify-center items-center'>
             <PiggyBank className='w-16 h-16'/>
@@ -176,8 +177,8 @@ const AboutPage = () => {
         </div>
 
         {/* Section 4: Future Features */}
-        <div className="glass-card transition-all ease-in duration-500 hover:scale-105 p-6 min-h-[50vh] flex flex-col justify-center items-center rounded-2xl shadow-xl animate-fadeInSlideUp" style={{ animationDelay: '0.8s' }}>
-          <h4 className="md:text-4xl text-3xl font-bold text-justify     mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">4. Future Enhancements</h4>
+        <div className="glass-card transition-all ease-in duration-500 hover:scale-105 p-2 min-h-[50vh] flex flex-col justify-center items-center rounded-2xl shadow-xl animate-fadeInSlideUp" style={{ animationDelay: '0.8s' }}>
+          <h4 className="md:text-4xl sm:text-3xl text-xl pt-6 font-bold text-justify     mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 animate-pulse-light">4. Future Enhancements</h4>
           <div className='flex flex-col text-3xl justify-center items-center'>
             <PhoneIncoming className='w-10 h-10'/>
           </div>

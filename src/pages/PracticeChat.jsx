@@ -106,7 +106,7 @@ const PracticeChat = () => {
        
        
      {isSideBarOpen &&
-      <aside className={` overflow-hidden z-40 fixed left-0 h-screen transition-all duration-300 ease-in-out ${isSideBarOpen ? 'w-64':'w-0'}   transform  pr-3 lg:flex overflow-y-auto  flex-col start pt-14 pb-2  ${isSideBarOpen?'bg-gray-900':'bg-gray-950'} `}>
+      <aside className={` overflow-hidden z-40 fixed border-r-[1px] border-gray-400 left-0 h-screen transition-all duration-300 ease-in-out ${isSideBarOpen ? 'w-64':'w-0'}   transform  pr-3 lg:flex overflow-y-auto  flex-col start pt-14 pb-2  ${isSideBarOpen?'bg-gray-900':'bg-gray-950'} `}>
               <div className='flex flex-col p-1'>
                  <SidebarItem title="DSA" options={["Array","Stack","Sorting","LinkedList","Queue","String","DSAQuestion"]} />
                  {/* <SidebarItem title="Java" options={["Core","Advance","Java Collections"]}/>

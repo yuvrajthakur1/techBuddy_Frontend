@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import  {useLoaderData} from 'react-router-dom'
 import { useOutletContext } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+
 
 // This is the data we would get from the backend API.
 // It reflects the structure of your Attempt model.
@@ -46,29 +46,7 @@ const ProfilePage = () => {
     <div className=" h-screen bg-gray-900  text-gray-100  p-6">
            
        
-        <Toaster
-                   position="top-center"
-                   reverseOrder={false}
-                   gutter={8}
-                   toastOptions={{
-                     // Define default options
-                     className: 'glass-cards',
-                     duration: 50000,
-                     style: {
-                       background: '#ffffff',
-                       color: '#363636',
-                     },
-                     // Default options for specific types
-                     success: {
-                       duration: 3000,
-                       theme: {
-                         primary: 'green',
-                         secondary: 'black',
-                       },
-                     },
-                   }}
-                 />
-
+    
       
       <style>{`
         .glass-card {
@@ -92,6 +70,7 @@ const ProfilePage = () => {
             </div>
             <div className="text-left">
               <h1 className="lg:text-3xl md:text-2xl text-xl font-extrabold text-white">{user.name}</h1>
+              <p className="lg:text-3xl md:text-2xl text-xl font-extrabold text-white">{user.role}</p>
               <p className="text-blue-400 text-lg">{user.occupation}</p>
               <p className="text-sm text-gray-400">{user.college}, {user.city}</p>
             </div>

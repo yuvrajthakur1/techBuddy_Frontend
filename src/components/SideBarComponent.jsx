@@ -15,6 +15,9 @@ export default function SidebarItem({ title, options}) {
         {title}
       </button>
 
+
+      
+
       {/* Sub Items */}
       {open && (
         <ul className="mt-1 ml-4 bg-gray-700 rounded-lg">

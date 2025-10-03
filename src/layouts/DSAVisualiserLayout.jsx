@@ -2,16 +2,38 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { MenuIcon, XIcon} from "lucide-react";
+import { LogOut, MenuIcon, XIcon} from "lucide-react";
 import { useLocation } from "react-router-dom";
 import api from "../axios/axios";
 import VisualiserSidebarItem from "../components/VisualiserSideBar";
 import { ClimbingBoxLoader, RingLoader } from "react-spinners";
 
 
+
+
+const NavItem = ({path,field})=>{
+     return  <NavLink
+                              to={path}
+                             className={(isActive)=>{
+                               return (
+                                `text-sm font-semibold text-slate-200  py-2  rounded-md text-center
+                               relative pb-1 hover:text-sky-300
+                after:content-[''] after:absolute after:left-0 after:bottom-0
+                after:h-[2px] after:w-0 after:bg-current
+                after:transition-all after:duration-300
+                hover:after:w-full  ${isActive ? 'text-sky-300':'text-slate-300'}
+                             `
+                               )
+                             }}
+                            >
+                              {field}
+                            </NavLink>
+}
+
+
 export default function DSAVisualiserLayout(){
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileSideOpen, setIsMobileSideOpen] = useState(false);
+  const [isMobileSideOpen, setIsMobileSideOpen] = useState(true);
   const {user} = useLoaderData();
   const navigate = useNavigate();
  
@@ -133,9 +155,9 @@ export default function DSAVisualiserLayout(){
         }
       `}</style>
 
-          <div className="h-screen overflow-hidden bg-gray-950 text-gray-200 flex flex-col">
+          <div className="h-screen overflow-hidden bg-gray-950 text-white flex flex-col">
 
-            <nav className="h-20 py-2 pl-10 pr-10 justify-between items-center glass-card bg-gray-800 flex">
+            <nav className="h-20 py-2 pl-6 pr-6 justify-between items-center glass-card bg-gray-800 flex">
               
               <div>
                  {/* Brand/Logo */}
@@ -145,36 +167,20 @@ export default function DSAVisualiserLayout(){
 
               </div>
                
-               <div className="lg:flex hidden gap-4">
-                 <NavLink
-                              to="/profile/practice"
-                             className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                            >
-                              Practice With AI
-                            </NavLink>
-                
-                            <NavLink
-                              to="/profile"
-                             className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                            >
-                              Analytics
-                            </NavLink>
-                
-                            <NavLink
-                              to="/dsavisualiser"
-                              className="text-sm font-bold glass-card py-2 w-40 rounded-md text-center"
-                              
-                            >
-                              DSA Visualise
-                            </NavLink>
+               <div className="lg:flex hidden gap-10">
 
-                             <button
-                              onClick={handleLogout}
-                              className="text-sm font-bold cursor-pointer glass-card py-2 w-40 rounded-md text-center"
-                              
-                            >
-                              LogOut
-                            </button>
+                <div className="flex gap-5">
+                  <NavItem path="/profile/practice" field="Practice With AI"/>
+                <NavItem path="/profile" field="Analytics"/>
+                <NavItem path="/dsavisualiser" field="DSA Visualiser"/>
+                <NavItem path="/profile/practice" field="Practice With AI"/>
+                </div>
+
+                <button
+                  onClick={handleLogout}
+                  className="text-sm font-bold cursor-pointer py-2  rounded-md text-center">
+                  <LogOut/>
+                </button>
                             
                </div>
                

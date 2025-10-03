@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, Outlet, useNavigation } from 'react-router-dom';
-import {ClimbingBoxLoader,hash, RingLoader} from 'react-spinners';
+import {ClimbingBoxLoader,RingLoader} from 'react-spinners';
+import { LogIn } from 'lucide-react';
 
 
 
 const AppLayout = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+
+  const NavItem = ({path,field})=>{
+       return  <NavLink
+  to={path}
+  className={({ isActive }) =>
+    `text-base font-semibold py-2 rounded-md text-center relative pb-1 
+     after:content-[''] after:absolute after:left-0 after:bottom-0 
+     after:h-[2px] after:bg-current after:transition-all after:duration-300
+     ${isActive ? "text-sky-300 after:w-full" : "text-slate-200 hover:text-sky-300 hover:after:w-full"}`
+  }
+>
+  {field}
+</NavLink>
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,33 +128,12 @@ const AppLayout = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6">
-              <NavLink to="/about" className="text-md text-white font-md glass-card py-1 w-32 rounded-md text-center">About</NavLink>
+             <NavItem path="/" field="Home"/>
+             <NavItem path="/about" field="About"/>
 
-              <NavLink to="#" className="text-md text-white font-md glass-card py-1  w-32 rounded-md text-center">Features</NavLink>
 
-              <NavLink to="/" className="text-md text-white font-md glass-card py-1  w-32 rounded-md text-center">Home</NavLink>
-
-           
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                `py-1 px-4 bg-blue-800 text-white font-semibold rounded-lg hover:bg-blue-500 transition-colors duration-300 transform hover:scale-105 ${
-                  isActive ? 'bg-blue-600' : ''
-                }`
-              }
-            >
-              Log In
-            </NavLink>
-            <NavLink
-              to="/signup"
-              className={({ isActive }) =>
-                `py-1 px-4 border-2 border-blue-800 text-blue-500 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300 transform hover:scale-105 ${
-                  isActive ? 'bg-blue-500 text-white' : ''
-                }`
-              }
-            >
-              Sign Up
-            </NavLink>
+             <NavItem  path="/login" field="Log In"/>
+             <NavItem path="/signup" field="Sign Up"/> 
           </div>
 
           {/* Mobile menu button */}
@@ -165,6 +160,7 @@ const AppLayout = () => {
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
           <div className="lg::hidden bg-gray-950 bg-opacity-90 backdrop-filter backdrop-blur-md absolute top-16 left-0 w-full flex flex-col items-center space-y-4 py-4 transition-all duration-300 ease-in-out transform origin-top animate-fadeIn">
+
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -176,10 +172,12 @@ const AppLayout = () => {
             >
               About
             </NavLink>
+
+
             <NavLink
               to="/features"
               className={({ isActive }) =>
-                `w-full text-center py-2 px-4 glass-card rounded-lg transition-all duration-300 hover:bg-gray-700 hover:text-white ${
+                `w-full text-center py-2  px-4 glass-card rounded-lg transition-all duration-300 hover:bg-gray-700 hover:text-white ${
                   isActive ? 'nav-link-active' : 'text-gray-300'
                 }`
               }
@@ -187,6 +185,7 @@ const AppLayout = () => {
             >
               Features
             </NavLink>
+
             <NavLink
               to="/login"
               className={({ isActive }) =>
@@ -198,10 +197,11 @@ const AppLayout = () => {
             >
               Log In
             </NavLink>
+
             <NavLink
               to="/signup"
               className={({ isActive }) =>
-                `w-full text-center py-2 px-4 glass-card border-2 border-blue-500 text-blue-500 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300 ${
+                `w-full text-center py-2 px-4  border-2  text-white font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300 ${
                   isActive ? 'bg-blue-500 text-white' : ''
                 }`
               }
@@ -209,6 +209,9 @@ const AppLayout = () => {
             >
               Sign Up
             </NavLink>
+
+
+
           </div>
         )}
         </nav>

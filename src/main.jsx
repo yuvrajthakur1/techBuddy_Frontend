@@ -31,6 +31,8 @@ import Forgot from './pages/Forgot.jsx'
 import Reset from './pages/Reset.jsx'
 import forgotAction from './actions/forgot.Action.js'
 import resetAction from './actions/resetAction.js'
+import AdminPanelLayout from './layouts/AdminPanelLayout.jsx'
+import Dashboard from './components/AdminComponents/DashBoard.jsx'
 
 
 
@@ -59,16 +61,19 @@ const router = createBrowserRouter([
       element:<SignUp/>,
       action:signupAction
     },
+
     {
       path:"/login",
       element:<Login/>,
       action:loginAction
     },
+
     {
       path:"/forgot-password",
       element:<Forgot/>,
       action:forgotAction
     },
+
     {
       path:"/reset-password/:token",
       element:<Reset/>,
@@ -159,7 +164,19 @@ const router = createBrowserRouter([
         ]
         },
       ]
-     }
+     },
+
+    //  Route for admin panel
+
+    {
+       path:"/admin",
+       element:<AdminPanelLayout/>,
+       children:[
+        {index:true, element:<Dashboard/>}
+       ]
+    }
+
+
 
 ])
 
