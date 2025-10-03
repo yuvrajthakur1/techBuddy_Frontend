@@ -5,6 +5,7 @@ import api from "../axios/axios";
 export default async function loginAction({request}) {
      const formData = await request.formData();
      const plainData = Object.fromEntries(formData);
+     console.log(plainData);
      try {
        const res = await api.post('/auth/login',plainData);
        console.log(res.data.msg)
