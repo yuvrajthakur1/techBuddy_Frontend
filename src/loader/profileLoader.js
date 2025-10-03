@@ -5,6 +5,7 @@ export default async function profileLoader(){
 
     try {
       const userRes = await api.get("/profile");
+      console.log(userRes);
       const attemptRes = await api.get("/attempts/my-attempts");
       const attemptData = attemptRes.data;
       return {user:userRes.data.user,attempts:attemptData};
